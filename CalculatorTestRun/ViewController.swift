@@ -84,6 +84,7 @@ class ViewController: UIViewController {
     
     @IBAction func clearButtonPressed(_ sender: Any) {
         state.clear()
+        updateDisplay()
     }
     
     func updateDisplay() {
@@ -91,7 +92,7 @@ class ViewController: UIViewController {
     }
     
     func showNewAnswer() {
-        display.text = String(format: "%f", state.currentValue!)
+        display.text = String(format: "%0f", state.currentValue!)
     }
     
 }
