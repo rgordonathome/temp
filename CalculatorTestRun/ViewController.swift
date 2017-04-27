@@ -72,8 +72,27 @@ class ViewController: UIViewController {
         updateDisplay()
     }
     
+    @IBAction func equals(_ sender: Any) {
+        state.equals()
+        showNewAnswer()
+    }
+    
+    @IBAction func multiply(_ sender: Any) {
+        state.multiply()
+        showNewAnswer()
+    }
+    
+    @IBAction func clearButtonPressed(_ sender: Any) {
+        state.clear()
+    }
+    
     func updateDisplay() {
         display.text = state.newValue
     }
+    
+    func showNewAnswer() {
+        display.text = String(format: "%f", state.currentValue!)
+    }
+    
 }
 
