@@ -72,6 +72,11 @@ class ViewController: UIViewController {
         updateDisplay()
     }
     
+    @IBAction func zeroPressed(_ sender: Any) {
+        state.addToNewValue(digit: "0")
+        updateDisplay()
+    }
+    
     @IBAction func equals(_ sender: Any) {
         state.equals()
         showNewAnswer()
