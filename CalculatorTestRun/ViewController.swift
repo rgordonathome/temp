@@ -97,6 +97,10 @@ class ViewController: UIViewController {
         showNewAnswer()
     }
     
+    @IBAction func percent(_ sender: Any) {
+        state.percent()
+        showNewAnswer()
+    }
     
     @IBAction func clearButtonPressed(_ sender: Any) {
         state.clear()

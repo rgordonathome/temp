@@ -18,6 +18,7 @@ class Calculator {
     let division = "Division"
     let addition = "Addition"
     let subtraction = "Subtraction"
+    let percentage = "Percentage"
     
     var currentOperation : String? = nil
     
@@ -43,7 +44,7 @@ class Calculator {
 
         updateState()
     }
-
+    
     func add() {
         
         // Set the operation
@@ -59,6 +60,15 @@ class Calculator {
         
         updateState()
     }
+    
+    func percent() {
+        
+        // Set the operation
+        currentOperation = percentage
+        
+        updateState()
+    }
+
 
     func updateState() {
         
@@ -66,6 +76,9 @@ class Calculator {
         if currentValue == nil {
             // If new value is first value entered, it becomes currentValue right away
             makeNewValueCurrentValue()
+            if currentOperation == percentage {
+                equals()
+            }
         } else if newValue == "" {
             // do nothing
         } else {
@@ -86,6 +99,8 @@ class Calculator {
             currentValue = currentValue! + Double(newValue)!
         } else if currentOperation == subtraction {
             currentValue = currentValue! - Double(newValue)!
+        } else if currentOperation == percentage {
+            currentValue = currentValue! / Double(100)
         }
         
         // The operation selected had been performed, so get ready to receive new operation
