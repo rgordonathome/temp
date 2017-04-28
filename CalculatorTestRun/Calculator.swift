@@ -66,7 +66,13 @@ class Calculator {
         // Set the operation
         currentOperation = percentage
         
-        updateState()
+        // Get the value provided if one was provided
+        if newValue != "" {
+            makeNewValueCurrentValue()
+        }
+        
+        // Calculate the percentage
+        equals()
     }
 
 
@@ -76,9 +82,6 @@ class Calculator {
         if currentValue == nil {
             // If new value is first value entered, it becomes currentValue right away
             makeNewValueCurrentValue()
-            if currentOperation == percentage {
-                equals()
-            }
         } else if newValue == "" {
             // do nothing
         } else {
