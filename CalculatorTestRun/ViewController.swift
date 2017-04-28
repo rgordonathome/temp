@@ -107,6 +107,11 @@ class ViewController: UIViewController {
         showNewAnswer()
     }
     
+    @IBAction func changeSign(_ sender: Any) {
+        state.changeSign()
+        updateDisplay()
+    }
+    
     @IBAction func clearButtonPressed(_ sender: Any) {
         state.clear()
         updateDisplay()

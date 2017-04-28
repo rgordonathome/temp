@@ -126,4 +126,18 @@ class Calculator {
         currentValue = Double(newValue)
         newValue = ""
     }
+    
+    func changeSign() {
+        // Only add a sign when a value exists
+        if newValue != "" {
+            if newValue.contains("-") {
+                // When negative, make positive by removing the negative sign at the start of the string
+                newValue.remove(at: newValue.startIndex)
+            } else {
+                // When positive, make negative by adding the negative sign at the start of the string
+                newValue.insert("-", at: newValue.startIndex)
+            }
+            
+        }
+    }
 }
