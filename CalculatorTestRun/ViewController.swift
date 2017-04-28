@@ -82,6 +82,22 @@ class ViewController: UIViewController {
         showNewAnswer()
     }
     
+    @IBAction func divide(_ sender: Any) {
+        state.divide()
+        showNewAnswer()
+    }
+    
+    @IBAction func add(_ sender: Any) {
+        state.add()
+        showNewAnswer()
+    }
+    
+    @IBAction func subtract(_ sender: Any) {
+        state.subtract()
+        showNewAnswer()
+    }
+    
+    
     @IBAction func clearButtonPressed(_ sender: Any) {
         state.clear()
         updateDisplay()
