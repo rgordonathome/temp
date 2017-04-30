@@ -78,7 +78,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equals(_ sender: Any) {
-        state.equals()
+        printState()
+        state.equals(retainOperation: false)    // Clear the operation since "=" button was pressed
+        printState()
         showNewAnswer()
     }
     
@@ -118,7 +120,27 @@ class ViewController: UIViewController {
     }
     
     func updateDisplay() {
-        display.text = state.newValue
+        
+        // When the clear button has just been pressed
+        if state.newValue == "" && state.currentValue == nil {
+            
+            // Show nothing in the display area
+            display.text = ""
+            
+        } else {
+            
+            // When there is no new value but there is a current value, that means
+            // an operation has just been performed, so, show the answer
+            if state.newValue == "" {
+                showNewAnswer()
+            } else {
+                // When there is not a current value, just a change in the new value, show
+                // the new value
+                display.text = state.newValue
+            }
+
+        }
+        
     }
     
     func showNewAnswer() {
@@ -135,6 +157,14 @@ class ViewController: UIViewController {
                 display.text = String(format: "%f", state.currentValue!)
             }
         }
+    }
+    
+    func printState() {
+        // Show the current calculator state
+        print("Current value is \(state.currentValue)")
+        print("New value is \(state.newValue)")
+        print("Current operation is \(state.currentOperation)")
+        print("===============")
     }
     
 }

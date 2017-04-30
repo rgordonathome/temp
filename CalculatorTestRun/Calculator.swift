@@ -99,7 +99,7 @@ class Calculator {
         
     }
     
-    func equals() {
+    func equals(retainOperation : Bool = true) {
         
         // Perform the selected operation so long as there is a current value to operate on
         if currentValue != nil {
@@ -122,9 +122,11 @@ class Calculator {
         }
         
         
-        // The operation selected had been performed, so get ready to receive new operation
+        // The operation selected has been performed, so get ready to receive new operation
         // and new value
-        currentOperation = nil
+        if retainOperation == false {
+            currentOperation = nil
+        }
         newValue = ""
         
     }
