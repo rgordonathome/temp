@@ -124,13 +124,16 @@ class ViewController: UIViewController {
     func showNewAnswer() {
         
         // See whether current value can be represented as an integer
-        let truncated = Double(Int(state.currentValue!))
-        if state.currentValue! - truncated == 0 {
-            // Show as integer, without decimals
-            display.text = String(format: "%.0f", state.currentValue!)
-        } else {
-            // Show with decimals
-            display.text = String(format: "%f", state.currentValue!)
+        // First verify that there is a current value to work with
+        if state.currentValue != nil {
+            let truncated = Double(Int(state.currentValue!))
+            if state.currentValue! - truncated == 0 {
+                // Show as integer, without decimals
+                display.text = String(format: "%.0f", state.currentValue!)
+            } else {
+                // Show with decimals
+                display.text = String(format: "%f", state.currentValue!)
+            }
         }
     }
     
