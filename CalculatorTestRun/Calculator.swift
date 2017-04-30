@@ -113,6 +113,9 @@ class Calculator {
             } else if currentOperation == Operation.percentage {
                 currentValue = currentValue! / Double(100)
             }
+        } else if currentOperation == nil && newValue != "" && currentOperation == nil {
+            // When a number is pressed and then the equals button
+            currentValue = Double(newValue)!
         }
         
         
