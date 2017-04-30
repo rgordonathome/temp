@@ -13,6 +13,7 @@
 		811445621EB20C17003FF430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811445611EB20C17003FF430 /* Assets.xcassets */; };
 		811445651EB20C17003FF430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811445631EB20C17003FF430 /* LaunchScreen.storyboard */; };
 		8114456D1EB21948003FF430 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114456C1EB21948003FF430 /* Calculator.swift */; };
+		815482F01EB6525900B2BCA1 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815482EF1EB6525900B2BCA1 /* Operation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		811445641EB20C17003FF430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		811445661EB20C17003FF430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8114456C1EB21948003FF430 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		815482EF1EB6525900B2BCA1 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				811445631EB20C17003FF430 /* LaunchScreen.storyboard */,
 				811445661EB20C17003FF430 /* Info.plist */,
 				8114456C1EB21948003FF430 /* Calculator.swift */,
+				815482EF1EB6525900B2BCA1 /* Operation.swift */,
 			);
 			path = CalculatorTestRun;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				8114455D1EB20C17003FF430 /* ViewController.swift in Sources */,
 				8114455B1EB20C17003FF430 /* AppDelegate.swift in Sources */,
 				8114456D1EB21948003FF430 /* Calculator.swift in Sources */,
+				815482F01EB6525900B2BCA1 /* Operation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +308,7 @@
 				8114456B1EB20C17003FF430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -13,14 +13,7 @@ class Calculator {
     // MARK: Properties
     var newValue : String = ""
     var currentValue : Double? = nil
-    
-    let multiplication = "Multiplication"
-    let division = "Division"
-    let addition = "Addition"
-    let subtraction = "Subtraction"
-    let percentage = "Percentage"
-    
-    var currentOperation : String? = nil
+    var currentOperation : Operation? = nil
     
     // MARK: Initializer(s)
     
@@ -36,7 +29,7 @@ class Calculator {
     func multiply() {
         
         // Set the operation
-        currentOperation = multiplication
+        currentOperation = Operation.multiplication
         
         updateState()
     }
@@ -44,7 +37,7 @@ class Calculator {
     func divide() {
         
         // Set the operation
-        currentOperation = division
+        currentOperation = Operation.division
 
         updateState()
     }
@@ -52,7 +45,7 @@ class Calculator {
     func add() {
         
         // Set the operation
-        currentOperation = addition
+        currentOperation = Operation.addition
         
         updateState()
     }
@@ -60,7 +53,7 @@ class Calculator {
     func subtract() {
         
         // Set the operation
-        currentOperation = subtraction
+        currentOperation = Operation.subtraction
         
         updateState()
     }
@@ -68,7 +61,7 @@ class Calculator {
     func percent() {
         
         // Set the operation
-        currentOperation = percentage
+        currentOperation = Operation.percentage
         
         // Get the value provided if one was provided
         if newValue != "" {
@@ -109,15 +102,15 @@ class Calculator {
         if currentValue != nil && newValue != "" {
             
             // It's safe to force unwrap these values as we've checked for nil or empty strings
-            if currentOperation == multiplication {
+            if currentOperation == Operation.multiplication {
                 currentValue = currentValue! * Double(newValue)!
-            } else if currentOperation == division {
+            } else if currentOperation == Operation.division {
                 currentValue = currentValue! / Double(newValue)!
-            } else if currentOperation == addition {
+            } else if currentOperation == Operation.addition {
                 currentValue = currentValue! + Double(newValue)!
-            } else if currentOperation == subtraction {
+            } else if currentOperation == Operation.subtraction {
                 currentValue = currentValue! - Double(newValue)!
-            } else if currentOperation == percentage {
+            } else if currentOperation == Operation.percentage {
                 currentValue = currentValue! / Double(100)
             }
         }
