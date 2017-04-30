@@ -26,7 +26,11 @@ class Calculator {
     
     // MARK: Method(s) a.k.a. Function(s)
     func addToNewValue(digit : String) {
-        self.newValue += digit
+        if self.newValue == "" && digit == "." {
+            self.newValue = "0."
+        } else {
+            self.newValue += digit
+        }
     }
     
     func multiply() {
@@ -102,12 +106,9 @@ class Calculator {
     func equals(retainOperation : Bool = true) {
         
         // Perform the selected operation so long as there is a current value to operate on
-        if currentValue != nil {
+        if currentValue != nil && newValue != "" {
             
-            // 1. It's safe to force unwrap currentValue, as we've checked that it does not contain a nil
-            // 2. It's OK to force unwrap the creation of a Double from newValue, as we know what
-            //    that string contains, since our logic created the string... it will always be
-            //    something that can be represented as a Double
+            // It's safe to force unwrap these values as we've checked for nil or empty strings
             if currentOperation == multiplication {
                 currentValue = currentValue! * Double(newValue)!
             } else if currentOperation == division {

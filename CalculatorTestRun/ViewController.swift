@@ -77,6 +77,11 @@ class ViewController: UIViewController {
         updateDisplay()
     }
     
+    @IBAction func decimalPressed(_ sender: Any) {
+        state.addToNewValue(digit: ".")
+        updateDisplay()
+    }
+    
     @IBAction func equals(_ sender: Any) {
         printState()
         state.equals(retainOperation: false)    // Clear the operation since "=" button was pressed
