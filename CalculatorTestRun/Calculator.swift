@@ -38,7 +38,7 @@ class Calculator {
         
         // Set the operation
         currentOperation = Operation.division
-
+        
         updateState()
     }
     
@@ -49,7 +49,7 @@ class Calculator {
         
         updateState()
     }
-
+    
     func subtract() {
         
         // Set the operation
@@ -71,8 +71,8 @@ class Calculator {
         // Calculate the percentage
         equals()
     }
-
-
+    
+    
     func updateState() {
         
         // Set the state of the calculator as appropriate
@@ -110,12 +110,12 @@ class Calculator {
                 currentValue = currentValue! + Double(newValue)!
             } else if currentOperation == Operation.subtraction {
                 currentValue = currentValue! - Double(newValue)!
-            } else if currentOperation == Operation.percentage {
-                currentValue = currentValue! / Double(100)
             }
-        } else if currentOperation == nil && newValue != "" && currentOperation == nil {
+        } else if currentValue == nil && newValue != "" && currentOperation == nil {
             // When a number is pressed and then the equals button
             currentValue = Double(newValue)!
+        } else if currentOperation == Operation.percentage && newValue == "" && currentValue != nil {
+            currentValue = currentValue! / Double(100)
         }
         
         
