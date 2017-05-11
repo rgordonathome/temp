@@ -83,9 +83,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equals(_ sender: Any) {
-        printState()
         state.equals(retainOperation: false)    // Clear the operation since "=" button was pressed
-        printState()
         showNewAnswer()
     }
     
@@ -162,14 +160,6 @@ class ViewController: UIViewController {
                 display.text = String(format: "%f", state.currentValue!)
             }
         }
-    }
-    
-    func printState() {
-        // Show the current calculator state
-        print("Current value is \(state.currentValue)")
-        print("New value is \(state.newValue)")
-        print("Current operation is \(state.currentOperation)")
-        print("===============")
     }
     
 }
